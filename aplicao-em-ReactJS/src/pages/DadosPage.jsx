@@ -1,6 +1,13 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Container, Typography } from '@mui/material';
+import {
+  Container,
+  Typography,
+  AppBar,
+  Toolbar,
+  Button,
+  CssBaseline,
+} from '@mui/material';
 import api from '../services/api';
 
 export default function DadosPage() {
@@ -14,10 +21,31 @@ export default function DadosPage() {
   if (!post) return <Typography>Carregando...</Typography>;
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>Detalhes do Post</Typography>
-      <Typography variant="h5">{post.title}</Typography>
-      <Typography variant="body1">{post.body}</Typography>
-    </Container>
+    <>
+      <CssBaseline />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">Detalhes do Post</Typography>
+        </Toolbar>
+      </AppBar>
+
+      <Container sx={{ mt: 4 }}>
+        <Typography variant="h4" gutterBottom>
+          {post.title}
+        </Typography>
+        <Typography variant="body1" paragraph>
+          {post.body}
+        </Typography>
+
+        <Button
+          variant="contained"
+          color="primary"
+          component={Link}
+          to="/post"
+        >
+          Voltar para lista
+        </Button>
+      </Container>
+    </>
   );
 }
