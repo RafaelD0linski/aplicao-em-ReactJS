@@ -8,34 +8,5 @@
     "id": 2,
     "title": "Dicas para um sono melhor",
     "body": "Dormir bem é essencial para a saúde. Neste artigo, veja hábitos que podem melhorar a qualidade do seu sono."
-  },
-  {
-    "id": 1,
-    "title": "Como melhorar sua produtividade no trabalho",
-    "body": "Neste post, vamos explorar algumas dicas práticas para aumentar sua produtividade no ambiente de trabalho...",
-    "author": "Ana Silva",
-    "date": "2023-11-15",
-    "readTime": "5 min de leitura",
-    "category": "Produtividade",
-    "tips": [
-      "Organize suas tarefas por prioridade",
-      "Faça pausas regulares",
-      "Evite multitarefas"
-    ]
-  },
-    {
-    "id": 2,
-    "title": "Dicas para um sono melhor",
-    "body": "Dormir bem é essencial para a saúde...",
-    "author": "Carlos Mendes",
-    "date": "2023-11-10",
-    "readTime": "4 min de leitura",
-    "category": "Saúde",
-    "benefits": [
-      "Melhora o humor",
-      "Aumenta a concentração",
-      "Fortalecimento imunológico"
-    ]
   }
-  
 ]

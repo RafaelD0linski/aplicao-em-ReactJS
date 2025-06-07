@@ -7,7 +7,7 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/post" element={<PostPage />} />
-        <Route path="/dados/:id" element={<DadosPage />} />
+        <Route path="/detalhes/:id" element={<DadosPage />} />
       </Routes>
     </BrowserRouter>
   );
