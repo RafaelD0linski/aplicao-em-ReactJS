@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Button, CardActions } from '@mui/material';
+import { Card, CardContent, Typography, Button, CardActions, Chip, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 export default function PostCard({ post }) {
@@ -9,28 +9,38 @@ export default function PostCard({ post }) {
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
-      transition: 'all 0.3s ease',
+      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
       '&:hover': {
         transform: 'translateY(-5px)',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+        boxShadow: 3
       }
     }}>
       <CardContent sx={{ flexGrow: 1 }}>
+        {/* Mostra a categoria se existir */}
+        {post.category && (
+          <Chip 
+            label={post.category} 
+            size="small" 
+            color="primary"
+            sx={{ mb: 1 }}
+          />
+        )}
+        
         <Typography 
           variant="h6" 
           gutterBottom
           sx={{
             fontWeight: 'bold',
-            minHeight: '64px',
             display: '-webkit-box',
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            minHeight: '3em' // Garante espaço para 2 linhas mesmo se título for curto
           }}
         >
           {post.title}
         </Typography>
-
+        
         <Typography 
           variant="body2" 
           color="text.secondary"
@@ -39,22 +49,35 @@ export default function PostCard({ post }) {
             WebkitLineClamp: 3,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
-            mb: 2
+            mb: 1
           }}
         >
-          {post.body.substring(0, 100)}...
+          {post.body}
         </Typography>
+        
+        {/* Metadados no rodapé do card */}
+        <Box sx={{ display: 'flex', gap: 1, mt: 'auto', pt: 1 }}>
+          {post.author && (
+            <Typography variant="caption" color="text.secondary">
+              Por {post.author}
+            </Typography>
+          )}
+          {post.readTime && (
+            <Typography variant="caption" color="text.secondary">
+              ⏱️ {post.readTime}
+            </Typography>
+          )}
+        </Box>
       </CardContent>
-
+      
       <CardActions sx={{ p: 2, pt: 0 }}>
-        <Button
-          variant="contained"
-          size="small"
+        <Button 
+          size="small" 
+          variant="outlined"
           onClick={() => navigate(`/detalhes/${post.id}`)}
           sx={{ 
             ml: 'auto',
-            fontWeight: 'bold',
-            borderRadius: '20px'
+            fontWeight: 'bold'
           }}
         >
           Ver Detalhes
