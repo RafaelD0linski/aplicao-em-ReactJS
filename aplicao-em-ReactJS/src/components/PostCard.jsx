@@ -16,7 +16,7 @@ export default function PostCard({ post }) {
       }
     }}>
       <CardContent sx={{ flexGrow: 1 }}>
-        {/* Mostra a categoria se existir */}
+        {}
         {post.category && (
           <Chip 
             label={post.category} 
