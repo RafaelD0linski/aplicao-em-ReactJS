@@ -9,11 +9,10 @@ export default defineConfig({
   server: {
     port: 5173
   },
-  // 👇 ESSA É A PARTE MAIS IMPORTANTE
   resolve: {
     alias: {
       '/@': '/src'
     }
   },
-  base: './', // <-- Isso aqui é crucial
+  base: '/',
 });
