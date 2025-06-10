@@ -4,7 +4,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ptBR } from '@mui/material/locale';
 import AppRoutes from './routes/AppRoutes';
 
-// Criar o tema do Material UI com idioma português
 const theme = createTheme({}, ptBR);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
