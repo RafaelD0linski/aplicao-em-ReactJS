@@ -16,7 +16,7 @@ export default function PostCard({ post }) {
       }
     }}>
       <CardContent sx={{ flexGrow: 1 }}>
-        {/* Mostra a categoria se existir */}
+        {}
         {post.category && (
           <Chip 
             label={post.category} 
@@ -35,7 +35,7 @@ export default function PostCard({ post }) {
             WebkitLineClamp: 2,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
-            minHeight: '3em' // Garante espaço para 2 linhas mesmo se título for curto
+            minHeight: '3em' 
           }}
         >
           {post.title}
@@ -55,7 +55,7 @@ export default function PostCard({ post }) {
           {post.body}
         </Typography>
         
-        {/* Metadados no rodapé do card */}
+        {}
         <Box sx={{ display: 'flex', gap: 1, mt: 'auto', pt: 1 }}>
           {post.author && (
             <Typography variant="caption" color="text.secondary">

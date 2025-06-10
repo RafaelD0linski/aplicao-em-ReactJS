@@ -8,22 +8,17 @@ import {
   CssBaseline,
 } from '@mui/material';
 import PostCard from '../components/PostCard';
-import api from '../services/api'; // ✅ usando a API real
-// import postsData from '../data/posts.json'; // 🔁 alternativa com dados locais
+import api from '../services/api'; 
 
 export default function PostPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // ✅ Versão que busca os dados da API real
     api.get('/posts')
       .then((response) => setPosts(response.data))
       .catch((error) => {
         console.error('Erro ao buscar os posts da API', error);
       });
-
-    // 🔁 Versão com dados locais (caso queira usar offline ou sem rede)
-    // setPosts(postsData);
   }, []);
 
   return (

@@ -13,20 +13,18 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import api from '../services/api'; // importar api real
-// import posts from '../data/posts.json';  // código antigo, comentado
+import api from '../services/api'; 
 
 export default function DadosPage() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true); // para controlar loading
+  const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     setError(false);
 
-    // Busca post na API real
     api.get(`/posts/${id}`)
       .then((response) => {
         setPost(response.data);
@@ -37,13 +35,6 @@ export default function DadosPage() {
         setError(true);
         setLoading(false);
       });
-
-    // Código antigo para buscar localmente, comentado:
-    /*
-    const postSelecionado = posts.find((p) => p.id === parseInt(id));
-    setPost(postSelecionado);
-    setLoading(false);
-    */
   }, [id]);
 
   if (loading) return <Typography>Carregando post...</Typography>;
